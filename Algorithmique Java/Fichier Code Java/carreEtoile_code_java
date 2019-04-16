@@ -1,0 +1,23 @@
+
+public class App {
+
+	public static void main(String[] args) {
+		// declarer les variables
+		int nbEtoile;
+		String etoile = "";
+		// demander le nombre
+		Terminal.ecrireString("nombre d'etoiles :");
+		// nb_etoile<-lire entier()
+		nbEtoile = Terminal.lireInt();
+		// nombre de colonnes
+		for (int h = 0;  h < nbEtoile; h++) {
+			etoile = etoile + "* ";
+		}
+		// nombre de lignes
+		for (int l = 0; l < nbEtoile; l++) {
+			Terminal.ecrireStringln(etoile);
+		}
+
+	}
+
+}

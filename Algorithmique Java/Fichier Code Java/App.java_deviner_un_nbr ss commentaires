@@ -1,0 +1,21 @@
+import java.util.Random;
+
+public class App {
+
+	public static void main(String[] args) {
+		Random random= new Random();
+		int nbADeviner = random.nextInt(100)+1;
+		int nbRentre=0; 
+		while (nbADeviner!=nbRentre)
+		{ System.out.println("Entrez nombre");
+		nbRentre=Terminal.lireInt();
+			if (nbADeviner > nbRentre) {System.out.println("+");
+			
+		}
+		if (nbADeviner < nbRentre) {System.out.println("-");
+		
+		}
+		}System.out.println("trouvé");
+	}
+	
+}

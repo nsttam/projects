@@ -1,0 +1,52 @@
+import java.util.Random;
+
+public class App {
+
+	public static void main(String[] args) {
+		// Declarer un générateur de nombre aléatoire
+		Random random = new Random();
+		// declarer une variable correspondant au nombre à deviner
+		int nbADeviner = random.nextInt(10) + 1;
+		// declarer une variable correspondant au nombre saisie
+		int nbSaisie = 0;
+		// declarer une variable pour stocker le nombre d'essais du joueur
+		int nbEssai = 0;
+		// declarer une variable pour definir un nombre d'essais maximum du joueur
+		int nbEssaiMax = 6;
+		// definir une variable quand le nombre d'essai est pluriel
+		String pluriel = "";
+		// On boucle, tant que le nombre à deviner est différent du nombre saisie
+		// et que le nombre d'essais maximum n'est pas atteint
+		while (nbADeviner != nbSaisie && nbEssai < nbEssaiMax) {
+			nbEssai = nbEssai + 1;
+			Terminal.ecrireStringln(nbEssai + ": Entrez nombre à deviner : ");
+			nbSaisie = Terminal.lireInt(); // affectation
+			// si le nombre saisie est superieur au nombre à deviner écrire "c'est plus"
+			if (nbADeviner > nbSaisie) {
+				Terminal.ecrireStringln("C'est plus");
+
+			}
+			// si le nombre saisie est inferieur au nombre à deviner écrire "c'est moins"
+			else if (nbADeviner < nbSaisie) {
+				Terminal.ecrireStringln("C'est moins");
+
+			} else {
+				// Le joueur a trouvé
+				if (nbEssai > 1) {
+					pluriel = "s";
+				}
+				// si le nombre saisie est égale au nombre à deviner écrire "bravo"
+				if (nbSaisie == nbADeviner) {
+					Terminal.ecrireStringln("BRAVO ! nombre d'essai" + pluriel + " : " + nbEssai);			
+				}
+			}
+			// si le joueur a epuise ses chances on affiche game over
+			if (nbEssai==nbEssaiMax){
+				Terminal.ecrireStringln("GAME OVER :( TRY AGAIN ! nombre d'essai" + pluriel + " : " + nbEssai);
+				
+			}
+		
+		}
+		
+	}
+}

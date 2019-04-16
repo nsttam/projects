@@ -1,0 +1,31 @@
+
+public class App {
+
+	public static void main(String[] args) {
+		// on declare une variable mot
+		String mot = "";
+		// on declare une variable mon inverse
+		String motIn = "";
+		
+	//on ecris le mot 
+		Terminal.ecrireString("Mot : ");
+	// on lis le mot
+		mot = Terminal.lireString();
+	// on declare une variable longueur du mot
+				int Nbr = mot.length();
+	//grace a une boucle pour on construit le mot inverse en calculant sa longueur par la fin
+		for (int pos = Nbr-1; pos>=0; pos--) {
+		//Terminal.ecrireStringln("Caractère trouvé: " + mot.charAt(pos));
+		//une fois la longueur du mot determine on le reecris en commencant par la derniere lettre du mot 
+			motIn=motIn + mot.charAt(pos);
+			}
+		Terminal.ecrireStringln(motIn);
+		//a laide d'une fonction equals on compare si le mot est bien un palindrome ou pas 
+if (mot.equals(motIn)) {
+	Terminal.ecrireStringln(mot +": oui ce mot est bien un palindrome !" );
+}	else {
+		Terminal.ecrireStringln(mot + " non comme vous le voyez que ce mot n'est pas un palindrome!");
+	}
+	
+}
+}

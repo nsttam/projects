@@ -1,0 +1,37 @@
+import java.util.Random;
+
+public class App {
+
+	public static void main(String[] args) {
+		// Declarer un générateur de nombre aléatoire
+		Random random = new Random();
+		// declarer une variable correspondant au nombre à deviner
+		int nbADeviner = random.nextInt(100) + 1;
+		// declarer une variable correspondant au nombre saisie
+		int nbSaisie = 0;
+		// declarer une variable pour stocker le nombre d'essais du joueur
+		int nbEssai = 0;
+
+		// On boucle, tant que le nombre à deviner est différent du nombre saisie
+		while (nbADeviner != nbSaisie) {
+			nbEssai = nbEssai + 1;
+			Terminal.ecrireStringln("Entrez nombre à deviner : ");
+			nbSaisie = Terminal.lireInt();
+		// si le nombre saisie est superieur au nombre à deviner écrire "c'est plus"
+			if (nbADeviner > nbSaisie) {
+				Terminal.ecrireStringln("C'est plus");
+
+			}
+		// si le nombre saisie est inferieur au nombre à deviner écrire "c'est moins"
+			else if (nbADeviner < nbSaisie) {
+				Terminal.ecrireStringln("C'est moins");
+
+			}
+			else {
+				// si le nombre saisie est égale au nombre à deviner écrire "bravo"
+				Terminal.ecrireStringln("BRAVO ! nombre d'essai : " + nbEssai);
+			}
+		}
+	}
+
+}
